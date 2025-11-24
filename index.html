@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurse Marwa | Healing with Heart</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        script: ['Pacifico', 'cursive'],
+                    },
+                    colors: {
+                        'pastel-blue': '#E0F2F1',
+                        'pastel-blue-dark': '#81D4FA',
+                        'pastel-pink': '#FFEBEE',
+                        'pastel-pink-btn': '#FFCDD2',
+                        'pastel-pink-text': '#E57373',
+                        'lavender': '#F3E5F5',
+                        'lavender-dark': '#CE93D8',
+                        'mint': '#E8F5E9',
+                        'charcoal': '#455A64',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for organic feels */
+        body {
+            background-color: #FFFDFD; /* Warm white */
+            overflow-x: hidden;
+        }
+        
+        /* The "Organic Blob" Backgrounds */
+        .blob-bg {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        /* Cute underlined text effect */
+        .highlight-text {
+            position: relative;
+            z-index: 10;
+        }
+        .highlight-text::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background-color: #FFCDD2;
+            z-index: -1;
+            opacity: 0.6;
+            border-radius: 10px;
+            transform: rotate(-1deg);
+        }
+    </style>
+</head>
+<body class="text-charcoal antialiased">
+
+    <div class="fixed inset-0 w-full h-full pointer-events-none overflow-hidden">
+        <div class="blob-bg bg-pastel-pink-btn w-96 h-96 top-0 left-0 animate-blob mix-blend-multiply"></div>
+        <div class="blob-bg bg-pastel-blue-dark w-96 h-96 top-0 right-0 animate-blob animation-delay-2000 mix-blend-multiply opacity-30"></div>
+        <div class="blob-bg bg-lavender-dark w-80 h-80 bottom-0 left-20 animate-blob animation-delay-4000 mix-blend-multiply opacity-30"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 top-4 px-4">
+        <div class="max-w-5xl mx-auto glass-card rounded-full px-6 py-3 flex justify-between items-center shadow-sm transition-all hover:shadow-md">
+            <a href="#" class="text-2xl font-script text-pastel-pink-text">
+                Nurse Marwa<i class="fa-solid fa-heart text-sm animate-pulse"></i>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-bold text-gray-500">
+                <a href="#about" class="hover:text-pastel-pink-text transition transform hover:-translate-y-0.5">My Story</a>
+                <a href="#certifications" class="hover:text-pastel-pink-text transition transform hover:-translate-y-0.5">Credentials</a>
+                <a href="#skills" class="hover:text-pastel-pink-text transition transform hover:-translate-y-0.5">Skills</a>
+            </div>
+            <a href="#contact" class="bg-white text-pastel-pink-text border-2 border-pastel-pink-btn px-6 py-2 rounded-full font-bold text-sm hover:bg-pastel-pink-btn hover:text-white transition transform hover:scale-105 shadow-sm">
+                Let's Chat!
+            </a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center pt-24 px-4 relative">
+        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center gap-12 max-w-6xl">
+            
+            <div class="w-full md:w-1/2 text-center md:text-left z-10" data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-block bg-white px-4 py-2 rounded-full shadow-sm text-sm font-bold text-pastel-pink-text mb-4 border border-pastel-pink">
+                    ✨ Registered Nurse (BSN, RN)
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-charcoal mb-6 leading-tight">
+                    Compassion in <br>
+                    <span class="highlight-text">Every Care.</span>
+                </h1>
+                <p class="text-lg text-gray-500 mb-8 leading-relaxed font-medium">
+                    Hi, I'm Marwa! dedicated to bringing warmth, clinical excellence, and a gentle touch to every patient interaction. Healing isn't just medical; it's personal.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="bg-gradient-to-r from-pastel-pink-btn to-pastel-pink-text text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-pink-200 hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="#experience" class="bg-white text-charcoal px-8 py-4 rounded-full font-bold shadow-md hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-100 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-user-nurse"></i> View Resume
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 flex justify-center relative" data-aos="fade-left" data-aos-duration="1200">
+                <div class="absolute top-10 right-10 text-4xl text-pastel-blue-dark animate-bounce opacity-50">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="absolute bottom-20 left-0 text-3xl text-pastel-pink-text animate-pulse opacity-50">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div class="relative animate-float">
+                    <div class="absolute inset-0 bg-pastel-pink rounded-full transform rotate-6 scale-105 z-0"></div>
+                    <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-white shadow-2xl z-10">
+                        
+                        <img src="hero img.png" 
+                             alt="Nurse Marwa" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-4 right-0 md:-right-4 bg-white p-4 rounded-2xl shadow-lg flex items-center gap-3 z-20 animate-pulse-slow">
+                        <div class="bg-green-100 p-2 rounded-full text-green-500">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold uppercase">Status</p>
+                            <p class="font-bold text-sm text-charcoal">Ready to Care</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full overflow-hidden leading-[0]">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block h-[60px] w-[calc(100%+1.3px)] fill-white">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+    </div>
+
+    <section id="about" class="py-20 bg-white relative">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="md:col-span-2 bg-pastel-blue/30 rounded-[2rem] p-10 relative overflow-hidden group" data-aos="fade-up">
+                     <i class="fa-solid fa-hand-holding-heart absolute -bottom-6 -right-6 text-9xl text-white opacity-40 group-hover:scale-110 transition duration-500"></i>
+                    <h2 class="text-3xl font-bold mb-4 text-charcoal">More than just a profession.</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        I believe that a nurse is a bridge between science and the human spirit. Whether I am monitoring vitals or holding a hand during a difficult moment, my goal is to make patients feel seen, heard, and safe.
+                    </p>
+                    <div class="mt-6">
+                        <span class="font-script text-3xl text-pastel-blue-dark">Marwa Ezzat</span>
+                    </div>
+                </div>
+
+                <div class="bg-lavender/40 rounded-[2rem] p-8 flex flex-col items-center justify-center text-center hover:bg-lavender/60 transition cursor-default" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl mb-2">🏥</div>
+                    <h3 class="text-4xl font-extrabold text-purple-400">3+</h3>
+                    <p class="font-bold text-gray-500">Years Experience</p>
+                </div>
+
+                <div class="bg-mint/50 rounded-[2rem] p-8 flex flex-col items-center justify-center text-center hover:bg-mint/70 transition cursor-default" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl mb-2"></div>
+                    <!-- ---------------------------------------------------------------------- -->
+                    <h3 class="text-4xl font-extrabold text-green-400">general</h3>
+                    <!-- <p class="font-bold text-gray-500">Specialization</p> -->
+                </div>
+
+                <div class="md:col-span-2 bg-pastel-pink/40 rounded-[2rem] p-8 flex items-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-pastel-pink-text text-5xl mr-6 opacity-50"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-xl font-bold text-charcoal italic">"To do what nobody else will do, a way that nobody else can do, in spite of all we go through; that is to be a nurse."</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- ---------- -->
+ <section id="certifications" class="py-24 bg-gradient-to-b from-white to-pastel-blue/20">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-16" data-aos="zoom-in">
+            <h2 class="text-4xl font-extrabold text-charcoal">My Credentials</h2>
+            <p class="text-gray-500 mt-2">Always learning, always improving.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-3xl p-1 shadow-xl group" data-aos="flip-left">
+                <div class="bg-white border-2 border-dashed border-pastel-blue-dark h-full rounded-[20px] p-6 flex flex-col items-center text-center relative overflow-hidden group hover:-translate-y-1 transition-all">
+                    
+                    <div class="absolute top-0 left-0 w-full h-2 bg-pastel-blue-dark"></div>
+
+                    <div class="w-16 h-16 bg-pastel-blue rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition text-blue-400 shadow-sm">
+                        <i class="fa-solid fa-wave-square text-2xl"></i>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-charcoal mb-1">ECG</h3>
+                    <p class="text-sm text-gray-400 mb-4">ECG-Guided Peripherally Inserted Central Catheter (PICC)</p>
+
+                    <div class="mb-4 p-1 border border-gray-100 rounded-lg bg-gray-50 cursor-pointer hover:scale-105 transition transform" onclick="openReview('ecg.png')">
+                        <img src="ecg.png" alt="ECG Certificate" class="w-16 h-12 object-cover rounded opacity-80 group-hover:opacity-100 transition">
+                        <div class="text-[10px] text-blue-400 mt-1"><i class="fa-solid fa-eye"></i> View</div>
+                    </div>
+
+                    <span class="bg-blue-50 text-blue-400 text-xs font-bold px-3 py-1 rounded-full">
+                        Incision 2025
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-1 shadow-xl group" data-aos="flip-left" data-aos-delay="100">
+                <div class="bg-white border-2 border-dashed border-pastel-pink-text h-full rounded-[20px] p-6 flex flex-col items-center text-center relative overflow-hidden">
+                    
+                    <div class="absolute top-0 left-0 w-full h-2 bg-pastel-pink-text"></div>
+                    
+                    <div class="w-16 h-16 bg-pastel-pink rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition">
+                        <i class="fa-solid fa-pump-soap text-2xl text-pink-400"></i>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-charcoal">CDS</h3>
+                    <p class="text-sm text-gray-400 mb-4">Cleaning, Disinfection and Sterilization of Instruments</p>
+                    
+                    <div class="mb-4 p-1 border border-gray-100 rounded-lg bg-gray-50 cursor-pointer hover:scale-105 transition transform" onclick="openReview('cl.png')">
+                        <img src="cl.png" alt="CDS Certificate" class="w-16 h-12 object-cover rounded opacity-80 group-hover:opacity-100 transition">
+                        <div class="text-[10px] text-pink-400 mt-1"><i class="fa-solid fa-eye"></i> View</div>
+                    </div>
+
+                    <span class="bg-pink-50 text-pink-400 text-xs font-bold px-3 py-1 rounded-full">Incision 2025</span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-1 shadow-xl group" data-aos="flip-left" data-aos-delay="200">
+                <div class="bg-white border-2 border-dashed border-green-400 h-full rounded-[20px] p-6 flex flex-col items-center text-center relative overflow-hidden">
+                    
+                    <div class="absolute top-0 left-0 w-full h-2 bg-green-400"></div>
+                    
+                    <div class="w-16 h-16 bg-mint rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition">
+                        <i class="fa-solid fa-lungs text-2xl text-green-500"></i>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-charcoal">OPDI</h3>
+                    <p class="text-sm text-gray-400 mb-4">Open Chest Drain Insertion</p>
+                    
+                    <div class="mb-4 p-1 border border-gray-100 rounded-lg bg-gray-50 cursor-pointer hover:scale-105 transition transform" onclick="openReview('op.png')">
+                        <img src="op.png" alt="OPDI Certificate" class="w-16 h-12 object-cover rounded opacity-80 group-hover:opacity-100 transition">
+                        <div class="text-[10px] text-green-500 mt-1"><i class="fa-solid fa-eye"></i> View</div>
+                    </div>
+
+                    <span class="bg-green-50 text-green-500 text-xs font-bold px-3 py-1 rounded-full">Incision 2025</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- --------------- -->
+ <div id="reviewModal" class="fixed inset-0 z-[9999] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    
+    <div class="fixed inset-0 bg-gray-900/90 backdrop-blur-sm transition-opacity" onclick="closeReview()"></div>
+
+    <div class="fixed inset-0 z-10 flex items-center justify-center p-4">
+        
+        <div class="relative inline-block align-middle">
+            
+            <button type="button" class="absolute -top-4 -right-4 bg-red-400 hover:bg-red-500 text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center text-lg font-bold transition z-50" onclick="closeReview()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <img id="reviewImg" src="" alt="Certificate Full Review" 
+                 class="max-h-[90vh] max-w-[90vw] w-auto h-auto rounded-lg shadow-2xl object-contain bg-white">
+            
+        </div>
+    </div>
+</div>
+
+<!-- ------- -->
+<section id="skills" class="py-20 relative bg-white/50">
+    <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-16">
+            <span class="bg-mint text-mint-dark px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Competencies</span>
+            <h2 class="text-4xl font-bold mt-3 text-charcoal">My Clinical Skill Set</h2>
+            <p class="text-gray-400 mt-2">A comprehensive overview of my technical and interpersonal abilities.</p>
+        </div>
+
+        <div class="space-y-12">
+
+            <div data-aos="fade-up">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 pl-2 border-l-4 border-baby-blue-dark">1. Clinical Assessment Skills</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-user-nurse text-blue-300 group-hover:text-blue-400"></i> Comprehensive Assessment
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-heart-pulse text-pink-300 group-hover:text-pink-400"></i> Vital Signs Interpretation
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-face-smile text-yellow-300 group-hover:text-yellow-400"></i> Pain Assessment Scales
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-eye text-indigo-300 group-hover:text-indigo-400"></i> Recognizing Deterioration
+                    </span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 pl-2 border-l-4 border-baby-pink-dark">2. Nursing Procedures & Technical</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-pills text-purple-300 group-hover:text-purple-400"></i> Medication Admin (IV, IM, SC)
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-syringe text-blue-300 group-hover:text-blue-400"></i> IV Cannulation
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-bandage text-pink-300 group-hover:text-pink-400"></i> Wound Care
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-faucet-drip text-blue-300 group-hover:text-blue-400"></i> Urinary Catheter Care
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-spoon text-orange-300 group-hover:text-orange-400"></i> NG Tube Feeding
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-droplet text-red-300 group-hover:text-red-400"></i> Blood Glucose Monitoring
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-hand-sparkles text-teal-300 group-hover:text-teal-400"></i> Sterile Procedures
+                    </span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 pl-2 border-l-4 border-mint-dark">3. Infection Control & Safety</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-shield-virus text-green-300 group-hover:text-green-400"></i> Infection Protocols
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-hands-bubbles text-blue-300 group-hover:text-blue-400"></i> Hand Hygiene & PPE
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-virus-slash text-purple-300 group-hover:text-purple-400"></i> Aseptic Technique
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-triangle-exclamation text-yellow-300 group-hover:text-yellow-400"></i> Safety Monitoring
+                    </span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">4. Documentation & Communication</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-file-contract text-gray-400 group-hover:text-gray-500"></i> Accurate Documentation
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-list-check text-blue-300 group-hover:text-blue-400"></i> SBAR Reporting
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-comments text-pink-300 group-hover:text-pink-400"></i> Therapeutic Communication
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-chalkboard-user text-green-300 group-hover:text-green-400"></i> Patient Education
+                    </span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 pl-2 border-l-4 border-yellow-300">5. Critical Thinking & Problem Solving</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-arrow-up-right-dots text-orange-300 group-hover:text-orange-400"></i> Prioritizing Needs
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-brain text-pink-300 group-hover:text-pink-400"></i> Clinical Decision Making
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-layer-group text-blue-300 group-hover:text-blue-400"></i> Nursing Process (ADPIE)
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-magnifying-glass-chart text-purple-300 group-hover:text-purple-400"></i> Risk Prevention
+                    </span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 pl-2 border-l-4 border-indigo-300">6. Teamwork & Professionalism</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-people-group text-teal-300 group-hover:text-teal-400"></i> Multidisciplinary Collab
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-user-lock text-gray-400 group-hover:text-gray-500"></i> Ethics & Confidentiality
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-hand-holding-heart text-pink-300 group-hover:text-pink-400"></i> Compassionate Care
+                    </span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 pl-2 border-l-4 border-red-300">7. Emergency & First Aid</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-truck-medical text-red-300 group-hover:text-red-400"></i> Emergency Response
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-heart text-pink-400 group-hover:text-pink-500"></i> Basic Life Support (BLS)
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-bolt text-yellow-400 group-hover:text-yellow-500"></i> Acute Management
+                    </span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 pl-2 border-l-4 border-teal-300">8. Specialized Clinical Exposure</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-bed-pulse text-blue-300 group-hover:text-blue-400"></i> Medical–Surgical
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-person-pregnant text-purple-300 group-hover:text-purple-400"></i> Obstetric & Gynecologic
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-baby text-pink-300 group-hover:text-pink-400"></i> Pediatric Nursing
+                    </span>
+                    <span class="px-6 py-3 bg-white border border-gray-100 shadow-md rounded-full text-gray-600 font-bold flex items-center gap-2 hover:-translate-y-1 transition group">
+                        <i class="fa-solid fa-heart-pulse text-red-300 group-hover:text-red-400"></i> ICU/ER Observation
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ------ -->
+    <section id="contact" class="py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-pastel-pink/30 to-transparent z-[-1]"></div>
+        
+        <div class="container mx-auto px-6" data-aos="zoom-in-up">
+            <div class="max-w-2xl mx-auto glass-card p-8 md:p-12 rounded-[3rem] shadow-2xl relative">
+                <div class="absolute top-8 right-8 opacity-20 rotate-12 hidden md:block">
+                     <i class="fa-solid fa-envelope-open-text text-6xl text-pastel-pink-text"></i>
+                </div>
+
+                <h2 class="text-3xl font-bold text-charcoal mb-2">Let's Connect!</h2>
+                <p class="text-gray-500 mb-8">Have a question or a job opportunity? I'm all ears.</p>
+
+                <form class="space-y-5">
+                    <div class="group">
+                        <input type="text" id="nameInput" class="w-full px-6 py-4 rounded-2xl bg-white/80 border-2 border-transparent focus:border-pastel-pink-text focus:ring-0 outline-none transition shadow-sm" placeholder="What's your name?">
+                    </div>
+                    <div class="group">
+                        <input type="email" id="emailInput" class="w-full px-6 py-4 rounded-2xl bg-white/80 border-2 border-transparent focus:border-pastel-pink-text focus:ring-0 outline-none transition shadow-sm" placeholder="Your email address">
+                    </div>
+                    <div class="group">
+                        <textarea rows="4" id="messageTextarea" class="w-full px-6 py-4 rounded-2xl bg-white/80 border-2 border-transparent focus:border-pastel-pink-text focus:ring-0 outline-none transition shadow-sm resize-none" placeholder="How can I help you?"></textarea>
+                    </div>
+                    <button  id="whatsappButton" class="w-full py-4 bg-pastel-pink-text text-white font-bold rounded-2xl shadow-lg hover:bg-red-400 hover:shadow-xl hover:-translate-y-1 transition transform flex justify-center items-center gap-2">
+                        <i class="fa-regular fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- ========================== -->
+
+    <footer class="py-10 text-center">
+        <p class="text-gray-400 text-sm font-bold">
+            Made with <i class="fa-solid fa-heart text-red-300 animate-pulse"></i> <p><a href="https://www.linkedin.com/in/samah-mohamed-web-developer/">Samah Mohamed.</a>by  &copy; 2025 All rights reserved.
+            used only by Marwa Ezzat.
+        </p>
+        <div class="flex justify-center gap-4 mt-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-400 hover:text-blue-500 hover:-translate-y-1 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-400 hover:text-pink-500 hover:-translate-y-1 transition"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+   const reviewModal = document.getElementById('reviewModal');
+    const reviewImg = document.getElementById('reviewImg');
+
+    // Function to Open the Review Screen
+    function openReview(imageSrc) {
+        reviewImg.src = imageSrc;
+        reviewModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    }
+
+    // Function to Close the Review Screen
+    function closeReview() {
+        reviewModal.classList.add('hidden');
+        setTimeout(() => { reviewImg.src = ''; }, 200); // Clear source after close
+        document.body.style.overflow = 'auto'; // Resume scrolling
+    }
+
+    // Close on Escape Key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            closeReview();
+        }
+    });
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Configuration: REPLACE THIS WITH YOUR NUMBER
+    const WA_NUMBER = 'YOUR_PHONE_NUMBER_HERE'; 
+
+    // 2. Get Form Elements
+    const whatsappButton = document.getElementById('whatsappButton');
+    const nameInput = document.getElementById('nameInput');
+    const emailInput = document.getElementById('emailInput');
+    const messageTextarea = document.getElementById('messageTextarea');
+
+    // 3. Event Listener for Button Click
+    whatsappButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Stop the default link behavior
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageTextarea.value.trim();
+        
+        // Basic validation
+        if (name === "" || email === "" || message === "") {
+            alert("Please fill in all fields (Name, Email, and Message) before sending.");
+            return;
+        }
+
+        // Construct the pre-filled message for WhatsApp
+        // %0A is the URL-encoded equivalent of a newline/line break
+        let fullMessage = `Hello, my name is ${name}. I saw your portfolio.`;
+        fullMessage += `%0A%0AEmail: ${email}`;
+        fullMessage += `%0A%0AMessage: ${message}`;
+        
+        // Encode the message and create the final URL
+        const url = `https://wa.me/${201098045036}?text=${encodeURIComponent(fullMessage)}`;
+        
+        // Open WhatsApp in a new tab
+        window.open(url, '_blank');
+
+        // Optional: Clear the form after submission attempt
+        nameInput.value = '';
+        emailInput.value = '';
+        messageTextarea.value = '';
+    });
+});
+
+        AOS.init({
+            once: true, // animations happen only once
+            offset: 100, // offset (in px) from the original trigger point
+            duration: 800, // duration of animation
+            easing: 'ease-out-cubic',
+        });
+    </script>
+</body>
+</html>
